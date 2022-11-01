@@ -23,6 +23,76 @@ paths:
                   type: string
               required:
               - name
+  "/v1/stores/{id}":
+    get:
+      summary: Retrieves a store
+      tags:
+      - Stores
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: store found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                required:
+                - id
+                - name
+        '404':
+          description: store not found
+    put:
+      summary: Updates a store
+      tags:
+      - Stores
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: store updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                required:
+                - id
+                - name
+        '404':
+          description: store not found
+    delete:
+      summary: Remove a store
+      tags:
+      - Stores
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: store removed
+        '404':
+          description: store not found
 servers:
 - url: http://{defaultHost}
   variables:

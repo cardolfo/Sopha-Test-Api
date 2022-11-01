@@ -7,9 +7,24 @@ module V1
             render status: :created, json: @store.as_json.target!
         end
 
-        def show
-            @store = Store.find(store_params[:id])
-            render status: :ok, json: @store.as_json.target!
+        def show            
+            @store = Store.where(id: store_params[:id])
+            raise Errors::StoreNotFound if @store.empty?
+            render status: :ok, json: @store.first.as_json.target!
+        end
+
+        def update
+            @store = Store.where(id: store_params[:id])
+            raise Errors::StoreNotFound if @store.empty?
+            @store.first.update store_params
+            render status: :ok, json: @store.first.as_json.target!
+        end
+
+        def destroy
+            @store = Store.where(id: store_params[:id])
+            raise Errors::StoreNotFound if @store.empty?
+            @store.first.destroy
+            render status: :ok, json: { message: "Removed" }
         end
 
         private 

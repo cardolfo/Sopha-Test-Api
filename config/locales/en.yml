@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  errors:
+    store_not_found: "Store not found"

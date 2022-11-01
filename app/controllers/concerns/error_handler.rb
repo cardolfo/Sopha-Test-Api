@@ -30,6 +30,8 @@ module ErrorHandler
         .to_s
         .split('::')
         .last
+        .titleize
+        .parameterize(separator: "_")        
     end
 
     def get_message(error)
