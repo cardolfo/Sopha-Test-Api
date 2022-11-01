@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :v1 do    
-    resources :stores
+    resources :stores, only: [:show, :create, :update, :destroy] 
   end
 end

@@ -78,6 +78,16 @@ paths:
                 - name
         '404':
           description: store not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
     delete:
       summary: Remove a store
       tags:
