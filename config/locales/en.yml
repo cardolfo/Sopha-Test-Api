@@ -33,3 +33,6 @@ en:
   hello: "Hello world"
   errors:
     store_not_found: "Store not found"
+    user_unauthenticated: "User unauthenticated. Username and/or password incorrect."
+    request_unauthorized: "Request unauthorized. Please re-sign in"
+    signup_failed: "Sign up Failed."

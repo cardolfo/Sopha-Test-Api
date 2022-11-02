@@ -1,15 +1,15 @@
 module Errors
-  class StoreNotFound < StandardError
+  class UserUnauthenticated < StandardError
     def initialize(
       msg = I18n.t(
-        'errors.store_not_found'
+        'errors.user_unauthenticated'
       )
     )
       super(msg)
     end
 
     def status
-      :no_content
+      :precondition_failed
     end
   end
 end

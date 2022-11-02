@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.1
 info:
-  title: API V1
+  title: Sopha API
   version: v1
 paths:
   "/v1/stores":
@@ -9,10 +9,18 @@ paths:
       summary: Creates a store
       tags:
       - Stores
-      parameters: []
+      parameters:
+      - name: Authorization
+        in: header
+        default: Token value
+        description: The user JWT token provided to you
+        schema:
+          type: string
       responses:
         '201':
           description: store created
+        '401':
+          description: Creates a store not authorized
       requestBody:
         content:
           application/json:
@@ -29,6 +37,12 @@ paths:
       tags:
       - Stores
       parameters:
+      - name: Authorization
+        in: header
+        default: Token value
+        description: The user JWT token provided to you
+        schema:
+          type: string
       - name: id
         in: path
         required: true
@@ -49,13 +63,21 @@ paths:
                 required:
                 - id
                 - name
-        '404':
+        '204':
           description: store not found
+        '401':
+          description: Retrieves a store not authorized
     put:
       summary: Updates a store
       tags:
       - Stores
       parameters:
+      - name: Authorization
+        in: header
+        default: Token value
+        description: The user JWT token provided to you
+        schema:
+          type: string
       - name: id
         in: path
         required: true
@@ -76,8 +98,10 @@ paths:
                 required:
                 - id
                 - name
-        '404':
+        '204':
           description: store not found
+        '401':
+          description: Updates a store not authorized
       requestBody:
         content:
           application/json:
@@ -93,6 +117,12 @@ paths:
       tags:
       - Stores
       parameters:
+      - name: Authorization
+        in: header
+        default: Token value
+        description: The user JWT token provided to you
+        schema:
+          type: string
       - name: id
         in: path
         required: true
@@ -101,10 +131,63 @@ paths:
       responses:
         '200':
           description: store removed
-        '404':
+        '204':
           description: store not found
+        '401':
+          description: Remove a storee not authorized
+  "/signin":
+    post:
+      summary: Sign in User
+      tags:
+      - User
+      parameters: []
+      responses:
+        '200':
+          description: Sign in successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+              - name
+              - password
+  "/signup":
+    post:
+      summary: Sign up User
+      tags:
+      - User
+      parameters: []
+      responses:
+        '200':
+          description: Sign up successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+                email:
+                  type: string
+              required:
+              - name
+              - password
 servers:
 - url: http://{defaultHost}
   variables:
     defaultHost:
-      default: www.example.com
+      default: localhost
+securityDefinitions:
+  JWT:
+    type: apiKey
+    in: header
+    name: access_token

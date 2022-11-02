@@ -18,7 +18,7 @@ RSpec.configure do |config|
     'v1/swagger.yaml' => {
       openapi: '3.0.1',
       info: {
-        title: 'API V1',
+        title: 'Sopha API',
         version: 'v1'
       },
       paths: {},
@@ -27,11 +27,18 @@ RSpec.configure do |config|
           url: 'http://{defaultHost}',
           variables: {
             defaultHost: {
-              default: 'www.example.com'
+              default: 'localhost'
             }
           }
         }
-      ]
+      ],
+      securityDefinitions: {
+        JWT: {
+          type: 'apiKey',
+          in: 'header',
+          name: 'access_token'
+        }
+      }
     }
   }
 
@@ -40,4 +47,26 @@ RSpec.configure do |config|
   # the key, this may want to be changed to avoid putting yaml in json files.
   # Defaults to json. Accepts ':json' and ':yaml'.
   config.swagger_format = :yaml
+end
+
+def add_auth_header
+  let(:user) { build(:user) }
+  let(:Authorization) { Services::UserService.signup(user) }
+end
+
+def add_auth_header_not_authorized
+  let(:Authorization) { '0' }
+end
+
+def authenticated
+  parameter name: :Authorization,
+            in: :header,
+            type: :string,
+            default: 'Token value',
+            description: 'The user JWT token provided to you'
+end
+
+def json_format
+  consumes 'application/json'
+  produces 'application/json'
 end

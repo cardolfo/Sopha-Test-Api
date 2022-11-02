@@ -31,7 +31,7 @@ module ErrorHandler
         .split('::')
         .last
         .titleize
-        .parameterize(separator: "_")        
+        .parameterize(separator: '_')
     end
 
     def get_message(error)

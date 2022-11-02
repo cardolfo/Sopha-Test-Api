@@ -1,15 +1,15 @@
 module Errors
-  class StoreNotFound < StandardError
+  class RequestUnauthorized < StandardError
     def initialize(
       msg = I18n.t(
-        'errors.store_not_found'
+        'errors.request_unauthorized'
       )
     )
       super(msg)
     end
 
     def status
-      :no_content
+      :unauthorized
     end
   end
 end
