@@ -30,9 +30,18 @@ gem 'rack-cors'
 gem 'rswag-api'
 gem 'rswag-ui'
 
+gem 'figaro'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger', '>= 0.1.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
+  gem 'web-console', '>= 3.3.0'
   gem 'rswag-specs'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
   gem 'factory_bot'

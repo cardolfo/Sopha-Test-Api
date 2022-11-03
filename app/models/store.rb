@@ -1,5 +1,5 @@
 class Store < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   belongs_to :user
 
   def as_json

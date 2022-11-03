@@ -13,6 +13,8 @@ test:
   database: sopha-api-test_test
 production:
   <<: *default
-  database: sopha-api-test_production
-  username: sopha-api-test
-  password: <%= ENV['SOPHA-API-TEST_DATABASE_PASSWORD'] %>
+  database: sat-prod
+  username: satuser
+  password: <%= ENV['HELLO_WORLD_DATABASE_PASSWORD'] %>
+  host: <%= ENV['HELLO_WORLD_DATABASE_HOST'] %>
+  port: <%= ENV['HELLO_WORLD_DATABASE_PORT'] %>
