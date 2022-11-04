@@ -1,62 +1,24 @@
 
 
 # Avaliação Sopha
-## Para iniciar
-Realize um **fork** desse repositório
-**clone** o projeto do fork
+Implementação do teste https://github.com/BrunoSDias/Sopha-Test-Api
+## Pré-requisitos
 
-Execute o comando para provisionar a aplicação:
+- Ruby 2.7.1
+- Docker
 
-    $ docker-compose up --build
+## Como subir banco e servidor de aplicação
 
-## Sobre
-O candidato deve fazer um **fork** deste repositório e realizar um **pull request** com o código do teste pronto antes do prazo de vencimento do desafio.
+- docker-compose up --build
 
-## Objetivo
+## Como rodar os testes
 
-O candidato deve criar uma **API** responsável por gerenciar um catalogo de lojas (**Store**)  e hospedá-lo em uma instância **AWS EC2**.
+Na pasta raiz da aplicação:
 
-## Estrutura
-Essa **API** deve ser constituída por:
+- Executar comando "bundle install"
+- Executar comando "rails db:create db:migrate"
+- Executar comando "rspec"
 
- - Um Model **User** com os atributos **name, email e password**
- - Um Model **Store** com os atributos **name, user_id**
- -  Onde:
-	 - **Store** pertence à **User**
-	 
-## Funcionalidade
-As seguintes requisições devem ser possíveis:
+## Documentação dos Endpoints
 
- - Processo de autenticação de um **User** (Signup, Signin)
-  - Requisições de **CRUD** (Create, Read, Update, Delete) para **Store**  (Estas requisições só devem ser possíveis se o usuário estiver autenticado)
-
-
-## Conhecimentos necessários
--  Ruby
--  Ruby on Rails
--  AWS EC2
--  Servidores HTTP
--  SQL
--  Postgres 
--   Git
-
-## Requisitos
-
--   Docker
-
-## O que esperamos da solução
- -  A aplicacão **DEVE** estar hospedada em uma instância **AWS EC2**
- -  Que todas as ações requisitadas funcionem.
- -  Que haja testes automatizados sobre essas ações (TDD).
- -  Que seja possível testar essas ações do ambiente local (Localhost) na **aplicação hospedada**.
- -  Instruções de uso no README.md
-	 - Como rodar os testes da aplicação
-	 - Quais os **endpoints** devo acessar para realizar as requisições esperadas na **aplicação hospedada**
-	 - Quais os **parâmetros** e/ou **cabeçalhos**  devo enviar para realizar cada uma das requisições esperadas na **aplicação hospedada**
- -  É **Opcional** utilizar **docker** na **aplicação hospedada**.
- - Uso de **gems** adicionais também é opcional
-
-## O que avaliaremos
-
- - Funcionalidade
- - Boas práticas
+- Após ter rodado os testes, acessar a seguinte URL http://localhost:3000/api-docs/index.html
