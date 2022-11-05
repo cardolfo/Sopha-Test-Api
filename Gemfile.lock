@@ -65,14 +65,16 @@ GEM
     capistrano-figaro-yml (1.0.5)
       capistrano (~> 3.1)
       sshkit (~> 1.2, >= 1.2.0)
-    capistrano-passenger (0.2.1)
-      capistrano (~> 3.0)
     capistrano-rails (1.6.2)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano3-puma (3.1.1)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (~> 3.4)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     database_cleaner-active_record (2.0.1)
@@ -220,9 +222,9 @@ DEPENDENCIES
   capistrano
   capistrano-bundler
   capistrano-figaro-yml (~> 1.0.2)
-  capistrano-passenger (>= 0.1.1)
   capistrano-rails
   capistrano-rvm
+  capistrano3-puma
   database_cleaner-active_record
   factory_bot
   faker!

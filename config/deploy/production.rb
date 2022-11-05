@@ -54,13 +54,9 @@
 #     # password: "please use keys"
 #   }
 
-server '44.211.191.67', user: 'ubuntu', roles: %w[app db web]
-
-role :app, %w[ubuntu@44.211.191.67]
-role :web, %w[ubuntu@44.211.191.67]
-role :db,  %w[ubuntu@44.211.191.67]
+server '3.89.242.61', user: 'ubuntu', roles: %w[app db web]
 set :ssh_options, {
-  keys: %w[~/.ssh/sopha-test-api-key-pair.pem],
+  keys: %w[~/.ssh/tests.pem],
   forward_agent: false,
   auth_methods: %w[publickey password]
 }
