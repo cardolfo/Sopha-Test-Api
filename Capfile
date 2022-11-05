@@ -1,6 +1,5 @@
 require 'capistrano/setup'
 require 'capistrano/deploy'
-require 'capistrano/rails'
 require 'capistrano/puma'
 install_plugin Capistrano::Puma
 require 'capistrano/scm/git'
