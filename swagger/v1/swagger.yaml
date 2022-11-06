@@ -185,7 +185,7 @@ servers:
 - url: http://{defaultHost}
   variables:
     defaultHost:
-      default: localhost
+      default: 
 securityDefinitions:
   JWT:
     type: apiKey
