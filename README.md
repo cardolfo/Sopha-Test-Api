@@ -21,4 +21,4 @@ Na pasta raiz da aplicação:
 
 ## Documentação para executar os endpoints (ainda não está executando pelo swagger)
 
-- Acessar a seguinte URL http://3.89.242.61/api-docs/index.html
+- Acessar a seguinte URL http://ec2-3-89-242-61.compute-1.amazonaws.com/api-docs/index.html

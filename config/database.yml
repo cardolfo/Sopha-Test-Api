@@ -15,6 +15,6 @@ production:
   <<: *default
   database: sat-prod
   username: satuser
-  password: <%= ENV['HELLO_WORLD_DATABASE_PASSWORD'] %>
-  host: <%= ENV['HELLO_WORLD_DATABASE_HOST'] %>
-  port: <%= ENV['HELLO_WORLD_DATABASE_PORT'] %>
+  password: <%= ENV['SOPHA_API_DATABASE_PASSWORD'] %>
+  host: <%= ENV['SOPHA_API_DATABASE_HOST'] %>
+  port: <%= ENV['SOPHA_API_DATABASE_PORT'] %>

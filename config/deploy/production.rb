@@ -55,6 +55,8 @@
 #   }
 
 server '3.89.242.61', user: 'ubuntu', roles: %w[app db web]
+set :rails_env, :production
+set :branch, 'main'
 set :ssh_options, {
   keys: %w[~/.ssh/tests.pem],
   forward_agent: false,

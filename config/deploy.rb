@@ -1,6 +1,5 @@
 set :application, 'sopha-test-api'
 set :repo_url, 'git@github.com:cardolfo/Sopha-Test-Api.git'
-set :branch, 'main'
 set :puma_threads, [4, 16]
 set :passenger_restart_with_touch, true
 set :linked_dirs,
