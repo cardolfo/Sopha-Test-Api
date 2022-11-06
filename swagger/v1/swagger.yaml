@@ -182,10 +182,10 @@ paths:
               - name
               - password
 servers:
-- url: http://{defaultHost}
+- url: http://ec2-3-89-242-61.compute-1.amazonaws.com
   variables:
     defaultHost:
-      default: ''
+      default: ec2-3-89-242-61.compute-1.amazonaws.com
 components:
   securitySchemes:
     bearerAuth:
@@ -193,6 +193,3 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-security:
-  bearerAuth:
-  - Bearer Authentication
