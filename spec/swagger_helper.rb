@@ -45,11 +45,6 @@ RSpec.configure do |config|
             bearerFormat: 'JWT'
           }
         }
-      },
-      security: {
-        bearerAuth: [
-          'Bearer Authentication'
-        ]
       }
     }
   }
