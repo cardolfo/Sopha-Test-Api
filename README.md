@@ -19,6 +19,6 @@ Na pasta raiz da aplicação:
 - Executar comando "rails db:create db:migrate"
 - Executar comando "rspec"
 
-## Documentação dos Endpoints
+## Documentação para executar os endpoints (ainda não está executando pelo swagger)
 
 - Acessar a seguinte URL http://3.89.242.61/api-docs/index.html
