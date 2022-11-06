@@ -21,4 +21,4 @@ Na pasta raiz da aplicação:
 
 ## Documentação dos Endpoints
 
-- Após ter rodado os testes, acessar a seguinte URL http://localhost:3000/api-docs/index.html
+- Acessar a seguinte URL http://3.89.242.61/api-docs/index.html
