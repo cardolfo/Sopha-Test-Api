@@ -22,3 +22,6 @@ Na pasta raiz da aplicação:
 ## Documentação para executar os endpoints (ainda não está executando pelo swagger)
 
 - Acessar a seguinte URL http://ec2-3-89-242-61.compute-1.amazonaws.com/api-docs/index.html
+
+- Inicialmente executa o /signup para criar o usuário. E nessa criação, o token de segurança é retornado
+- Para os demais endpoints, use o token retornado anteriormente no Header como parametro chamado "Authorization" com o seguinte valor 'Bearer <<token_retornado_anteriormente>>'
