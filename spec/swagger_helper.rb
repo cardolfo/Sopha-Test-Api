@@ -21,13 +21,44 @@ RSpec.configure do |config|
         title: 'Sopha API',
         version: 'v1'
       },
-      paths: {},
+      paths: {
+        '/v1/stores': {
+          post: {
+            security: {
+              bearerAuth: [
+                'Bearer Authentication'
+              ]
+            }
+          },
+          get: {
+            security: {
+              bearerAuth: [
+                'Bearer Authentication'
+              ]
+            }
+          },
+          put: {
+            security: {
+              bearerAuth: [
+                'Bearer Authentication'
+              ]
+            }
+          },
+          delete: {
+            security: {
+              bearerAuth: [
+                'Bearer Authentication'
+              ]
+            }
+          }
+        }
+      },
       servers: [
         {
-          url: 'http://{defaultHost}',
+          url: 'http://ec2-3-89-242-61.compute-1.amazonaws.com',
           variables: {
             defaultHost: {
-              default: "#{ENV['SWAGGER_DEFAULT_HOST']}"
+              default: 'ec2-3-89-242-61.compute-1.amazonaws.com'
             }
           }
         }
@@ -41,11 +72,6 @@ RSpec.configure do |config|
             bearerFormat: 'JWT'
           }
         }
-      },
-      security: {
-        bearerAuth: [
-          'Bearer Authentication'
-        ]
       }
     }
   }
