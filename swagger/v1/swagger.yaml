@@ -185,9 +185,14 @@ servers:
 - url: http://{defaultHost}
   variables:
     defaultHost:
-      default: 
-securityDefinitions:
-  JWT:
-    type: apiKey
-    in: header
-    name: access_token
+      default: ''
+components:
+  securitySchemes:
+    bearerAuth:
+      name: Bearer Authentication
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  bearerAuth:
+  - Bearer Authentication
