@@ -27,17 +27,25 @@ RSpec.configure do |config|
           url: 'http://{defaultHost}',
           variables: {
             defaultHost: {
-              default: ENV['SWAGGER_DEFAULT_HOST']
+              default: "#{ENV['SWAGGER_DEFAULT_HOST']}"
             }
           }
         }
       ],
-      securityDefinitions: {
-        JWT: {
-          type: 'apiKey',
-          in: 'header',
-          name: 'access_token'
+      components: {
+        securitySchemes: {
+          bearerAuth: {
+            name: 'Bearer Authentication',
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT'
+          }
         }
+      },
+      security: {
+        bearerAuth: [
+          'Bearer Authentication'
+        ]
       }
     }
   }
