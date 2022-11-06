@@ -7,7 +7,6 @@ set :linked_dirs,
     fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system',
                                  'public/uploads')
 set :rvm_ruby_version, '2.7.1'
-set :default_shell, '/bin/bash -l'
 
 set :puma_bind, "unix:///#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
