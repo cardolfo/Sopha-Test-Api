@@ -3,12 +3,18 @@ openapi: 3.0.1
 info:
   title: Sopha API
   version: v1
+  contact:
+    name: Carlos Adolfo
+    email: cardolfo@gmail.com
 paths:
   "/v1/stores":
     post:
       summary: Creates a store
       tags:
       - Stores
+      security:
+      - bearer_auth:
+        - Bearer Authentication
       parameters:
       - name: Authorization
         in: header
@@ -36,6 +42,9 @@ paths:
       summary: Retrieves a store
       tags:
       - Stores
+      security:
+      - bearer_auth:
+        - Bearer Authentication
       parameters:
       - name: Authorization
         in: header
@@ -71,6 +80,9 @@ paths:
       summary: Updates a store
       tags:
       - Stores
+      security:
+      - bearer_auth:
+        - Bearer Authentication
       parameters:
       - name: Authorization
         in: header
@@ -116,6 +128,9 @@ paths:
       summary: Remove a store
       tags:
       - Stores
+      security:
+      - bearer_auth:
+        - Bearer Authentication
       parameters:
       - name: Authorization
         in: header

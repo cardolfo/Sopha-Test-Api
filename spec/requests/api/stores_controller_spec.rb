@@ -4,6 +4,7 @@ RSpec.describe 'Stores API', type: :request do
   path '/v1/stores' do
     post 'Creates a store' do
       tags 'Stores'
+      security [bearer_auth: ['Bearer Authentication']]
 
       json_format
       authenticated
@@ -36,6 +37,7 @@ RSpec.describe 'Stores API', type: :request do
   path '/v1/stores/{id}' do
     get 'Retrieves a store' do
       tags 'Stores'
+      security [bearer_auth: ['Bearer Authentication']]
 
       json_format
       authenticated
@@ -72,6 +74,7 @@ RSpec.describe 'Stores API', type: :request do
   path '/v1/stores/{id}' do
     put 'Updates a store' do
       tags 'Stores'
+      security [bearer_auth: ['Bearer Authentication']]
 
       json_format
       authenticated
@@ -121,6 +124,7 @@ RSpec.describe 'Stores API', type: :request do
   path '/v1/stores/{id}' do
     delete 'Remove a store' do
       tags 'Stores'
+      security [bearer_auth: ['Bearer Authentication']]
 
       json_format
       authenticated

@@ -19,40 +19,13 @@ RSpec.configure do |config|
       openapi: '3.0.1',
       info: {
         title: 'Sopha API',
-        version: 'v1'
-      },
-      paths: {
-        '/v1/stores': {
-          post: {
-            security: {
-              bearerAuth: [
-                'Bearer Authentication'
-              ]
-            }
-          },
-          get: {
-            security: {
-              bearerAuth: [
-                'Bearer Authentication'
-              ]
-            }
-          },
-          put: {
-            security: {
-              bearerAuth: [
-                'Bearer Authentication'
-              ]
-            }
-          },
-          delete: {
-            security: {
-              bearerAuth: [
-                'Bearer Authentication'
-              ]
-            }
-          }
+        version: 'v1',
+        contact: {
+          name: 'Carlos Adolfo',
+          email: 'cardolfo@gmail.com'
         }
       },
+      paths: {},
       servers: [
         {
           url: 'http://ec2-3-89-242-61.compute-1.amazonaws.com',
